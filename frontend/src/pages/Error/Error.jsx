@@ -1,21 +1,16 @@
 import { Link } from "react-router-dom";
-import GreenError from "../../assets/images/404-green.webp";
+import ErrorSvg from "../../assets/images/404-error.svg";
 import "../../sass/pages/_Error.scss";
 
-/* Error page if user uses unknown route */
 function Error() {
     return (
         <div className="error-page">
             <main>
                 <section className="error">
                     <h2 className="sr-only">Error 404</h2>
-                    <img
-                        src={GreenError}
-                        alt="error 404"
-                        className="green-error"
-                    />
+                    <img src={ErrorSvg} alt="error 404" className="errorSvg" />
                     <p className="text-error">
-                        The requested page doesn t exist...
+                        Sorry, the page you are looking for does not exist.
                     </p>
                     <p className="text-error">Please return to homepage</p>
                     <Link to="/">

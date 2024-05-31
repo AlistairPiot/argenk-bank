@@ -7,8 +7,8 @@
     margin: 2rem auto;
     padding: 1.5rem;
     text-align: left;
-    width: 82%;
-    @media (max-width: 720px) {
+    width: 80%;
+    @media (max-width: 768px) {
         flex-direction: column;
     }
     .account-content-wrapper {
@@ -22,9 +22,10 @@
             font-weight: bold;
         }
     }
-    .cta {
-        @media (max-width: 720px) {
+    .view-transaction {
+        @media (max-width: 768px) {
             width: 100%;
+            border: 10px solid black;
         }
         .transaction-button {
             background-color: #00bc77;
