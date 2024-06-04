@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { loginFailed, loginSuccess } from "../redux/actions/authActions.jsx";
+import { loginFailed, loginSuccess } from "../redux/actions/authActions.js";
 import "../sass/components/_Form.scss";
 
 function Form() {

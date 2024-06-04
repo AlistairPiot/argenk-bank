@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updateUsername } from "../redux/actions/userActions.jsx";
+import { updateUsername } from "../redux/actions/userActions.js";
 import "../sass/components/_UserProfile.scss";
 
 function User() {
