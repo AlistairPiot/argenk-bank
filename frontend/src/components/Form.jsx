@@ -37,6 +37,7 @@ function Form() {
                 }
                 navigate("/profile");
             } else {
+                alert("Incorrect email/password");
                 const error = "Incorrect email/password";
                 dispatch(loginFailed(error));
             }

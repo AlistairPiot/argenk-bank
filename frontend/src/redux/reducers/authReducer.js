@@ -4,7 +4,10 @@ import { LOGIN_FAIL, LOGIN_SUCCESS, LOGOUT } from "../actions/typeActions";
 const initialState = {
     status: "VOID",
     isConnected: false,
-    token: null,
+    token:
+        localStorage.getItem("token") ||
+        sessionStorage.getItem("token") ||
+        null,
     error: null,
 };
 
@@ -28,7 +31,13 @@ export const authReducer = (state = initialState, action) => {
             };
         }
         case LOGOUT: {
-            return initialState;
+            return {
+                ...state,
+                status: "VOID",
+                isConnected: false,
+                token: null,
+                error: null,
+            };
         }
         default:
             return state;
