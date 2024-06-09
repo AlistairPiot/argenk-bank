@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginFailed, loginSuccess } from "../redux/actions/authActions.js";
@@ -12,6 +12,16 @@ function Form() {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        const localStorageToken = localStorage.getItem("token");
+        if (localStorageToken) {
+            dispatch(loginSuccess(localStorageToken));
+            navigate("/profile");
+        } else {
+            sessionStorage.removeItem("token");
+        }
+    }, [dispatch, navigate]);
 
     /* Asynchronous form function */
     const handleSubmit = async (event) => {
